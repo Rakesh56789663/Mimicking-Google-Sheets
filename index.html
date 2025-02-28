@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Sheets Clone</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Toolbar -->
+    <div class="toolbar">
+      <button onclick="setBold()" title="Bold"><b>B</b></button>
+      <button onclick="setItalic()" title="Italic"><i>I</i></button>
+      <select id="fontSize" onchange="setFontSize()" title="Font Size">
+        <option value="12px">12</option>
+        <option value="14px">14</option>
+        <option value="16px">16</option>
+      </select>
+      <input
+        type="color"
+        id="textColor"
+        onchange="setTextColor()"
+        title="Text Color"
+      />
+      <button onclick="removeDuplicates()">🗑 Remove Duplicates</button>
+      <button onclick="findAndReplace()">🔍 Find & Replace</button>
+    </div>
+
+    <!-- Formula Bar -->
+    <div class="formula-container">
+      <span>fx</span>
+      <input
+        type="text"
+        id="formulaBar"
+        placeholder="Enter formula here..."
+        oninput="updateFormula()"
+      />
+    </div>
+
+    <!-- Spreadsheet Table -->
+    <div class="spreadsheet-container">
+      <table id="spreadsheet"></table>
+    </div>
+
+    <!-- Row & Column Controls -->
+    <div class="controls">
+      <button onclick="addRow()">➕ Add Row</button>
+      <button onclick="deleteRow()">➖ Delete Row</button>
+      <button onclick="addColumn()">➕ Add Column</button>
+      <button onclick="deleteColumn()">➖ Delete Column</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
